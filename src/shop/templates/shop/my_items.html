@@ -1,0 +1,38 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+{% load i18n %}
+
+<div class="container">
+    <h1></h1>
+    <div class="row">
+        {% include 'shop/left.html' %}
+    </div>
+</div>
+
+<div class="container marketing">
+    <h1 class="recommend-title">My items</h1>
+    <div class="row ">
+        {% for product in my_items %}
+        <div class="col-lg-3 myitems">
+            <img src="{{product.image.url}}" alt="" width="140" height="140">
+            <h2>{{product.title}}</h2>
+            <p class="price_color">{{product.price}} HUF</p>
+            <p><a class="btn btn-success btn-block" href="{% url 'product' title=product.id %}" role="button">Show</a>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .myitems{
+      margin-bottom:40px;
+    }
+    .myitems h2, .myitems p{
+      margin-bottom:10px;
+    }
+
+
+</style>
+
+{% endblock %}

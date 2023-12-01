@@ -1,0 +1,158 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+{% load i18n %}
+<div class="container">
+  <h1></h1>
+  <div class="row">
+    {% include 'shop/left.html' %}
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">Main</a></li>
+          <li class="breadcrumb-item"><a href="{% url 'categories' %}">Categories</a></li>
+          <li class="breadcrumb-item"><a
+              href="{% url 'category' category=product.category.id %}">{{product.category}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{product.title}}</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <a href="" data-toggle="modal" data-target="#productModal">
+                <img class="img-fluid" src="{{product.image.url}}" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 add_to_cart_block">
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+              <h1 class="center">{{product.title}}</h1>
+              <p class="price">{{product.price|floatformat}} HUF</p>
+              <form action="" method="post">
+                {% csrf_token %}
+                {% if not is_author %}
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal"
+                  data-target="#exampleModal" data-whatever="@mdo">Reveal
+                  Contacts</button>
+                {% endif %}
+              </form>
+              <div class="grid-form-actions">
+                {% csrf_token %}
+                {% if user.is_authenticated %}
+                {% if is_author %}
+                {% if is_active %}
+                <form action="" method="get">
+                  <input type="hidden" name="toggle" value="0" />
+                  <button type="submit" class="btn btn-outline-primary btn-rounded">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+                      <label class="custom-control-label" for="customSwitch1">Active</label>
+                    </div>
+                  </button>
+                </form>
+                {%else%}
+                <form action="" method="get">
+                  <input type="hidden" name="toggle" value="1" />
+                  <button type="submit" class="btn btn-outline-primary btn-rounded">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                      <label class="custom-control-label" for="customSwitch1">Disabled</label>
+                    </div>
+                  </button>
+                </form>
+                {% endif %}
+                <form action="" method="get">
+                  <input type="hidden" name="delete" value="1" />
+                  <button type="submit" class="btn btn-outline-danger">
+                    Delete
+                  </button>
+                </form>
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card border-light mb-3">
+            <div class="card-header bg-secondary text-white text-uppercase"><i class="fa fa-align-justify"></i>
+              Description</div>
+            <div class="card-body">
+              <p class="card-text">
+                {{product.text}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Seller Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">First name</label>
+            <p readonly class="form-control" id="message-text">{{ creator_first_name }}</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Last name</label>
+            <p readonly class="form-control" id="message-text">{{ creator_last_name }}</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Bio</label>
+            <p readonly class="form-control" id="message-text">{{ creator_bio }}</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Facebook</label>
+            <a href="https://www.facebook.com/" readonly class="form-control" id="message-text">{{ creator_fb }}</a>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Phone</label>
+            <p readonly class="form-control" id="message-text">{{ creator_phone }}</p>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Email</label>
+            <p readonly class="form-control" id="message-text">{{ creator_email }}</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  form {
+    margin-bottom: 20px;
+  }
+
+  .grid-form-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .grid-form-actions button {
+    width: 100%;
+  }
+</style>
+
+{% endblock %}

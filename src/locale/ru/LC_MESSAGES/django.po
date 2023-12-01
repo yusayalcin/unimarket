@@ -1,0 +1,269 @@
+# Django Simple Shop.
+# Copyright (C) 2018
+# This file is distributed under the same license as the PACKAGE package.
+# Matchenko Igor igor@matchenko.com, 2018.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-13 18:07+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\shop\admin.py:13
+msgid "one_product_success"
+msgstr "1 товар успешно опубликован"
+
+#: .\shop\admin.py:15
+msgid "few_products_success"
+msgstr " товаров успешно опубликовано"
+
+#: .\shop\admin.py:16
+msgid "mark_products_published"
+msgstr "Опубликовать товары"
+
+#: .\shop\admin.py:21
+msgid "un_one_product_success"
+msgstr "1 товар успешно убран из публикации"
+
+#: .\shop\admin.py:23
+msgid "un_few_products_success"
+msgstr " товаров успешно убрано из публикации"
+
+#: .\shop\admin.py:24
+msgid "un_mark_products_published"
+msgstr "Убрать из публикации товары"
+
+#: .\shop\admin.py:33
+msgid "one_category_success"
+msgstr "1 категория успешно опубликована"
+
+#: .\shop\admin.py:35
+msgid "few_categories_success"
+msgstr " категорий успешно опубликовано"
+
+#: .\shop\admin.py:36
+msgid "mark_categories_published"
+msgstr "Опубликовать категории"
+
+#: .\shop\admin.py:41
+msgid "un_one_category_success"
+msgstr "1 категория успешна убрана из публикации"
+
+#: .\shop\admin.py:43
+msgid "un_few_categories_success"
+msgstr " категорий успешно убрано из публикации"
+
+#: .\shop\admin.py:44
+msgid "un_mark_categories_published"
+msgstr "Убрать из публикации категории"
+
+#: .\shop\models.py:6 .\shop\models.py:19 .\shop\models.py:38
+#: .\shop\templates\shop\cart.html:19
+msgid "title"
+msgstr "Название"
+
+#: .\shop\models.py:7 .\shop\models.py:20
+msgid "is_published"
+msgstr "Опубликовано"
+
+#: .\shop\models.py:8 .\shop\models.py:25 .\shop\models.py:40
+msgid "image"
+msgstr "Картинка"
+
+#: .\shop\models.py:11 .\shop\models.py:23
+msgid "category"
+msgstr "Категория"
+
+#: .\shop\models.py:12 .\shop\templates\shop\base.html:34
+#: .\shop\templates\shop\category.html:14 .\shop\templates\shop\left.html:4
+#: .\shop\templates\shop\product.html:14 .\shop\views.py:27
+msgid "categories"
+msgstr "Категории"
+
+#: .\shop\models.py:21
+msgid "is_recommend"
+msgstr "Рекомендуем"
+
+#: .\shop\models.py:22
+msgid "is_top"
+msgstr "В топе"
+
+#: .\shop\models.py:24 .\shop\templates\shop\cart.html:20
+msgid "price"
+msgstr "Цена"
+
+#: .\shop\models.py:26 .\shop\models.py:39
+msgid "text"
+msgstr "Текст"
+
+#: .\shop\models.py:29 .\shop\views.py:124
+msgid "product"
+msgstr "Товар"
+
+#: .\shop\models.py:30 .\shop\models.py:55
+msgid "products"
+msgstr "Товары"
+
+#: .\shop\models.py:43
+msgid "slide"
+msgstr "Слайд"
+
+#: .\shop\models.py:44
+msgid "slides"
+msgstr "Слайды"
+
+#: .\shop\models.py:51 .\shop\templates\shop\order.html:21 .\shop\views.py:128
+msgid "name"
+msgstr "Имя"
+
+#: .\shop\models.py:52 .\shop\templates\shop\order.html:24 .\shop\views.py:128
+msgid "surname"
+msgstr "Фамилия"
+
+#: .\shop\models.py:53 .\shop\templates\shop\order.html:28 .\shop\views.py:128
+msgid "email"
+msgstr "Почта"
+
+#: .\shop\models.py:54 .\shop\templates\shop\order.html:34 .\shop\views.py:128
+msgid "tel"
+msgstr "Телефон"
+
+#: .\shop\models.py:58 .\shop\models.py:62 .\shop\views.py:121
+msgid "order"
+msgstr "Заказ"
+
+#: .\shop\models.py:59
+msgid "orders"
+msgstr "Заказы"
+
+#: .\shop\templates\search\search.html:12 .\shop\templates\shop\base.html:30
+#: .\shop\templates\shop\cart.html:12 .\shop\templates\shop\categories.html:12
+#: .\shop\templates\shop\category.html:13 .\shop\templates\shop\order.html:12
+#: .\shop\templates\shop\product.html:13 .\shop\views.py:17
+msgid "main"
+msgstr "Главная"
+
+#: .\shop\templates\search\search.html:13 .\shop\templates\shop\base.html:50
+#: .\shop\views.py:149
+msgid "search"
+msgstr "Поиск"
+
+#: .\shop\templates\search\search.html:33
+#: .\shop\templates\shop\category.html:35
+#: .\shop\templates\shop\product.html:64
+msgid "buy"
+msgstr "Купить"
+
+#: .\shop\templates\search\search.html:42
+msgid "no_result"
+msgstr "Не найдено"
+
+#: .\shop\templates\shop\base.html:41
+msgid "all_categories"
+msgstr "Все категории"
+
+#: .\shop\templates\shop\base.html:45 .\shop\templates\shop\base.html:58
+#: .\shop\templates\shop\cart.html:13 .\shop\templates\shop\order.html:13
+#: .\shop\views.py:73
+msgid "cart"
+msgstr "Корзина"
+
+#: .\shop\templates\shop\base.html:84
+msgid "about"
+msgstr "О нас"
+
+#: .\shop\templates\shop\base.html:92
+msgid "informations"
+msgstr "Информация"
+
+#: .\shop\templates\shop\base.html:103
+msgid "other_links"
+msgstr "Другие ссылки"
+
+#: .\shop\templates\shop\base.html:114
+msgid "contact"
+msgstr "Контакты"
+
+#: .\shop\templates\shop\base.html:125
+msgid "to_top"
+msgstr "Наверх"
+
+#: .\shop\templates\shop\cart.html:21 .\shop\templates\shop\product.html:49
+#: .\shop\views.py:124
+msgid "count"
+msgstr "Количество"
+
+#: .\shop\templates\shop\cart.html:36
+msgid "total"
+msgstr "Всего"
+
+#: .\shop\templates\shop\cart.html:43
+msgid "clear"
+msgstr "Очистить"
+
+#: .\shop\templates\shop\cart.html:45 .\shop\templates\shop\cart.html:47
+msgid "checkout"
+msgstr "Оформить"
+
+#: .\shop\templates\shop\index.html:34
+msgid "popular"
+msgstr "Популярные"
+
+#: .\shop\templates\shop\index.html:41 .\shop\templates\shop\index.html:54
+msgid "show"
+msgstr "Посмотреть"
+
+#: .\shop\templates\shop\index.html:47 .\shop\templates\shop\old_index.html:29
+msgid "recommend"
+msgstr "Рекомендуем"
+
+#: .\shop\templates\shop\left.html:13
+msgid "last_product"
+msgstr "Последний товар"
+
+#: .\shop\templates\shop\order.html:30
+msgid "check_email"
+msgstr "Не правильно введена почта"
+
+#: .\shop\templates\shop\order.html:36
+msgid "check_tel"
+msgstr "Введите телефон в формате +380958523412"
+
+#: .\shop\templates\shop\order.html:52
+msgid "submit"
+msgstr "Отправить"
+
+#: .\shop\templates\shop\product.html:94
+msgid "description"
+msgstr "Описание"
+
+#: .\shop\views.py:105
+msgid "make_order"
+msgstr "Сделать заказ"
+
+#: .\shop\views.py:116
+msgid "success_order"
+msgstr "Успешный заказ"
+
+#: .\shop\views.py:127
+msgid "new_order"
+msgstr "Новый заказ"
+
+#: .\shop\views.py:128
+msgid "client"
+msgstr "Клиент"
+
+#: .\shop\views.py:134
+msgid "error_order"
+msgstr "Ошибка в заказе"

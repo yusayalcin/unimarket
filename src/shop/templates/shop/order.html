@@ -1,0 +1,66 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+{% load i18n %}
+<div class="container">
+  <h1></h1>
+  <div class="row">
+    {% include 'shop/left.html' %}
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'index' %}">Main</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Create a post</li>
+        </ol>
+      </nav>
+      <form enctype="multipart/form-data" class="needs-validation" action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="col-md-6 mb-3">
+          <input type="text" name="title" class="form-control" id="title" placeholder="TITLE" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <textarea class="form-control" aria-label="With textarea" id="description" name="description"
+            placeholder="DESCRIPTION" required></textarea>
+        </div>
+        <div class="col-md-6 mb-3">
+          <select name="category" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" required>
+            {% for cat in categories %}
+            <option value="{{cat.id}}" class="dropdown-item">{{cat.title}}</a>
+              {% endfor %}
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <input placeholder="COST" type="number" name="cost" min="0" oninput="validity.valid||(value='');" required>
+          HUF
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="custom-file">
+            <input name="image" type="file" class="custom-file-input" id="inputGroupFile01" accept="image/*" required>
+            <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+          </div>
+        </div>
+        <div class="col-md-1 mb-3">
+          <button class="btn btn-primary btn-size" type="submit">Create</button>
+        </div>
+      </form>
+      <script>
+        (function () {
+          'use strict';
+          window.addEventListener('load', function () {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function (form) {
+              form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+      </script>
+    </div>
+  </div>
+</div>
+{% endblock %}

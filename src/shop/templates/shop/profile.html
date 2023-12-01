@@ -1,0 +1,79 @@
+{% extends 'shop/base.html' %}
+
+{% block content %}
+
+	<!--User-->
+	<br><br>
+	<div class="container mx-auto">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-3 pb-4">
+				<div class="card p-4">
+					<div class="card-text">
+						<p class="text-muted mb-0" style="font-size: 12px">Email:</p>
+			    		<p>{{ user.username }}</p>
+						<p class="text-muted mb-0" style="font-size: 12px">Name:</p>
+						<p>{{ user.first_name }} {{ user.last_name }}</p>
+						<p class="text-muted mb-0" style="font-size: 12px">Bio:</p>
+						<p>{{user.profile.bio}}</p>
+						<p class="text-muted mb-0" style="font-size: 12px">Facebook:</p>
+						<a href="https://www.facebook.com/">{{user.profile.facebook}}</a>
+						<p class="text-muted mb-0" style="font-size: 12px">Bio:</p>
+						<p>{{user.profile.phone}}</p>
+						<div class="text-right">
+							<button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#profileModal">Edit Profile</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Edit user modal-->
+	<div class="modal fade" tabindex="-1" id="profileModal" role="dialog">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Edit Profile</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+			  </div>
+			  <div class="modal-body">
+				  <form method="post" id="editProfileForm">
+						{% csrf_token %}
+						{{user_form}}
+						{{profile_form}}
+						
+			  </div>
+				<div class="modal-footer">
+					  <button type="submit" class="btn btn-primary">Save changes</button>
+				  </form> 
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  </div>
+		  </div>
+		</div>
+  </div>
+
+  
+<style>
+	body{
+		font-family: Lato, sans-serif;
+	}
+	#editProfileForm label{
+		margin-bottom:15px;
+	}
+	#editProfileForm input, textarea{
+		margin-right: 20px;
+		border-radius: 5px;
+		margin-bottom: 20px;
+		font-size: 14px;
+		height: 40px;
+		padding: 0 15px;
+		border: none;
+		box-shadow: 0 5px 10px #00000033;
+		width: 100%;
+	}
+	
+	</style>
+
+{% endblock %}
